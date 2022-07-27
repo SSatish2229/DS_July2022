@@ -6,30 +6,30 @@ public class Constructor
 	{
 
 
-		Employee e = new Employee("SATISH","DEVLOPER","ON CODEING");
-		e.printEmployee();
+		Employee1 e = new Employee1("SATISH","DEVLOPER","ON CODEING");
+		e.printEmployee1();
 		
 		
 		System.out.println("------------------------------------------------------------------");
-		TeamLeader tl = new TeamLeader("JAYANT", "TEAM LEADER", "ALL EMPOLOYEE WORK WATCHING", "MONDAY", "ON INHERITANCE", "YES");
+		TeamLeader tl = new TeamLeader('M', "JAYANT", 35, "TEAM LEADER", "ALL EMPOLOYEE WORK WATCHING", 'A', "MONDAY", "ON INHERITANCE", 0, "YES", null, null);
 		tl.printStudent();
 
 		
 		System.out.println("------------------------------------------------------------------");
-		CompanyFounder cf = new CompanyFounder("MANISH", "FOUNDER", "AS A LEADER", "SUNDAY", "ON REACHER", "YES", "DASSAULT SYSTEAMS", "ANDROID APPLICATION", "YES");
+		CompanyFounder cf = new CompanyFounder('m', "MANISH", 30, "FOUNDER", "AS A LEADER", 'A', "SUNDAY", "ON REACHER", 0, "YES", "DASSAULT SYSTEAMS", "ANDROID APPLICATION", "YES", null, null);
 		cf.printEmployee();
 	}
 
 }
 
-class Employee
+class Employee1
 {
 	String name;
 	String post;
 	String access;
 	
 	
-	public Employee( String name, String post,String access) 
+	public Employee1( String name, String post,String access) 
 	{
 		super();
 		this.name = name;
@@ -37,7 +37,7 @@ class Employee
 		this.access = access;
 	}
 
-	void printEmployee() {
+	void printEmployee1() {
 
 		System.out.println("NAME   : "+name);
 		System.out.println("Post   : "+post);
@@ -54,13 +54,18 @@ class TeamLeader extends Employee
 	String persenti;
 	
 	
-	public TeamLeader(String name, String post, String access, String meetingDay, String workDistributed, String persenti) 
-	{
-		super(name, post, access);
+	
+
+	public TeamLeader(char gender, String name, int age, String college, String qualification, char grade,
+			String company, String job, double salary, String meetingDay, String workDistributed, String persenti) {
+		super(gender, name, age, college, qualification, grade, company, job, salary);
 		this.meetingDay = meetingDay;
 		this.workDistributed = workDistributed;
 		this.persenti = persenti;
 	}
+
+
+
 
 	void printStudent() 
 	{
@@ -78,16 +83,22 @@ class CompanyFounder extends TeamLeader
 	String company;
 	String projectDistributed;
 	String salaryDistributed;
-	public CompanyFounder(String name, String post, String access, String meetingDay, String workDistributed, String persenti,String company,String projectDistributed,String salaryDistributed) 
-	{
-		super(name, post, access,meetingDay,workDistributed,persenti);
-		this.company = company;
+	
+
+
+	public CompanyFounder(char gender, String name, int age, String college, String qualification, char grade,
+			String company, String job, double salary, String meetingDay, String workDistributed, String persenti,
+			String company2, String projectDistributed, String salaryDistributed) {
+		super(gender, name, age, college, qualification, grade, company, job, salary, meetingDay, workDistributed,
+				persenti);
+		company = company2;
 		this.projectDistributed = projectDistributed;
 		this.salaryDistributed = salaryDistributed;
 	}
 
 
-	void printEmployee() 
+
+	void printEmployee1() 
 	{
 		super.printStudent();
 		System.out.println("COMPANY: "+company);
