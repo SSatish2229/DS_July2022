@@ -1,0 +1,60 @@
+create table Member(Member_Id INT Primary Key,Member_Name varchar(30),Member_address varchar(50),Acc_Open_Date date,Membership_type varchar(20) Check ( Membership_type in ('Lifetime','Annual','Half Yearly','Quarterly')),Fees_paid INT,MAx_Books_Allowed INT,Penalty_Amount INT);
+
+create table Books1(Book_No INT,Book_Name VarChar(30),Author_name Varchar(30),Cost INT,Category VARCHAR(10));
+
+create table Issue(Lib_Issue_Id INT,Book_No INT,Member_Id INT,Issue_Date Date,Return_date Date);
+
+Desc Member;
+
+Drop table Member;
+
+ALTER TABLE Member MODIFY Member_Name varchar(20);
+
+Alter table issue add(Reference Char(30));
+
+alter table issue drop column Reference;
+
+RENAME TABLE issue TO lib_issue;
+
+insert into Member values (1,'Richa Sharma','Pune','10-Dec-05','Lifetime',2500,5,50);
+
+insert into Member values (2,'Garima Sen','Pune','10-Jul-09','Annual',1000,3,Null);
+
+insert into Member values (3,'Parag Sen','Mumbai','10-Aug-11','Lifetime',1500,2,50);
+
+insert into Member values (4,'Nitesh Karsi','Nashik','11-Jan-12','Lifetime',500,3,60);
+
+insert into Member values (5,'Rohit Rathod','Nagpur','12-Dec-08','Lifetime',1500,4,70);
+
+insert into Member values (6,'Sandip Jadhav','Mumbai','10-Jul-09','Lifetime',300,5,80);
+
+insert into Member values (7,'Ritika Singh','Delhi','10-Oct-10','Lifetime',800,5,50);
+
+Alter Table Member Modify Member_Name varchar(20) ;
+
+DELETE FROM Member WHERE Member_Id=2;
+insert into Member values (2,'Vinit Naik','Mumbai',CURRENT_DATE(),'Annual',1000,110,25);
+
+create table Member101 as select * from Member;
+
+alter table member add constraint member_chk_3 check (penalty_amount <=100);
+
+drop table books;
+
+create table Books(Book_No  int Primary Key,Book_Name VarChar(30) not null,Author_name Varchar(30),Cost  int,Category varChar(10), check (Category in ('Science' , 'Fiction' , 'Database' , 'RDBMS' , 'Others'))); 
+
+insert into books values (102,'Oracle – Complete Ref','Loni',550,'Database');
+
+insert into books values (103,'Mastering SQL','Loni',250,'Database');
+
+insert into books values (104,'PL SQL-Ref','Scott Urman',750,'Database');
+
+insert into books values (&Book_No,&Book_Name,&Author_Name,&Cost,&Category);
+
+
+
+
+
+
+
+
