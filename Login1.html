@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+	/*alert('welcome to java Script');
+	prompt('how old are you?');
+	console.log('how old are you?');
+	confirm('Are you sure?');*/
+	
+	function collect()
+	{
+		
+		var number1 = document.getElementById("num1").value;
+		var number2 = document.getElementById("num2").value;
+	
+		if(number1 && number2)
+		{
+			var addition = parseInt(number1) + parseInt(number2);
+			document.getElementById("answer1").value =addition;
+	
+		
+			var subtraction = parseInt(number1) - parseInt(number2);
+			document.getElementById("answer2").value =subtraction;
+	
+			var multiply = parseInt(number1) * parseInt(number2);
+			document.getElementById("answer3").value =multiply;
+	
+			var divide = parseInt(number1) / parseInt(number2);
+			document.getElementById("answer4").value =divide;
+		}
+	}
+</script>
+<body>
+
+	Enter number 1<input type=text id="num1"><br>
+	Enter number 2<input type=text id="num2"><br>
+	
+	<input type="button" id="add" value="ADD" onclick="collect()">
+	<INPUT TYPE="text" id="answer1">
+	</br>
+	
+	<input type="button" id="subtract" value="SUBTRACT" onclick="collect()">
+	<INPUT TYPE="text" id="answer2">
+	<br>
+	
+	<input type="button" id="multiply" value="MULTIPLY" onclick="collect()">
+	<INPUT TYPE="text" id="answer3">
+	<br>
+	
+	<input type="button" id="divide" value="DIVIDE" onclick="collect()">
+	<INPUT TYPE="text" id="answer4">
+	<br>
+	
+
+	
+</body>
+</html>
