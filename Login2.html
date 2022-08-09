@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+	function validateUser()
+	{
+		var username = document.getElementById("uname").value;
+		if(username=="")
+		{
+			document.getElementById("userErr").innerHTML='username can not be blank';	
+			return false;
+		}
+		
+		var password = document.getElementById("upass").value;
+		if(password=="")
+		{
+			document.getElementById("passErr").innerHTML='password can not be blank';	
+			return false;
+		}
+		return true;
+	}
+	
+	function clearUserErr()
+	{
+		document.getElementById("userErr").innerHTML="";
+	}
+	
+	function clearPassErr()
+	{
+		document.getElementById("passErr").innerHTML="";
+	}
+</script>
+<body>
+
+	<form action ="Registration.html">
+	Enter UserName<input type=text id="uname" onkeyUp="clearUserErr()"><span id="userErr"></span><br>
+	Enter PassWord<input type=password id="upass" onkeyUp="clearPassErr()"><span id="passErr"></span><br>
+	Enter UserName<input type=submit name="submit" id="login" onclick='return validateUser()'><br>
+</form>
+</body>
+</html>
